@@ -6,8 +6,9 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">title</th>
-                <th scope="col">slug</th>
+                <th scope="col">Titolo</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Categoria</th>
                 <th scope="col">Azioni</th>
 
             </tr>
@@ -18,6 +19,8 @@
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->slug }}</td>
+                    <td>{{ $post->post?->name }}</td>
+
                     <td>
                         <a href="{{ route('admin.posts.show', $post->slug) }}" class="btn btn-success">See More</a>
                         <a href="{{ route('admin.posts.edit', $post->slug) }}" class="btn btn-warning">Edit</a>

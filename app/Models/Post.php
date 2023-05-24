@@ -14,7 +14,8 @@ class Post extends Model
         'title',
         'cover_img',
         'description',
-        'slug'
+        'slug',
+        'type_id'
     ];
     public static function generateSlug(string $title)
     {
@@ -22,6 +23,6 @@ class Post extends Model
     }
     public function type()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Type::class);
     }
 }
