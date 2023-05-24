@@ -20,4 +20,8 @@ class Post extends Model
     {
         return Str::slug($title, '-');
     }
+    public function type()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
