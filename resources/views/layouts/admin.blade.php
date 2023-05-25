@@ -21,12 +21,9 @@
 
 <body>
     <div id="app">
-
         @include('partials.header')
-
-
-        <main class="">
-
+        <main>
+            {{-- SIDEBAR --}}
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-2">
@@ -52,6 +49,17 @@
                                     </a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.types.index') }}"
+                                        class="nav-link @if (Route::currentRouteName() == 'admin.types.index') active @endif">
+                                        <svg class="bi pe-none me-2" width="16" height="16">
+                                            <use xlink:href="#home"></use>
+                                        </svg>
+                                        Types
+                                    </a>
+                                </li>
+
+
                             </ul>
                         </div>
                     </div>
@@ -61,9 +69,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </main>
     </div>
 </body>

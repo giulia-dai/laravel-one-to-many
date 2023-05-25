@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
@@ -33,7 +34,12 @@ Route::middleware(['auth', 'verified'])
         Route::resource('posts', PostController::class)->parameters([
             'posts' => 'post:slug'
         ]);
+
+        Route::resource('types', TypeController::class)->parameters([
+            'types' => 'type:slug'
+        ])->only(['index']);
     });
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

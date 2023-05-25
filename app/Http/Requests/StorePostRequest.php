@@ -28,7 +28,6 @@ class StorePostRequest extends FormRequest
             'cover_img' => 'nullable|max:255|url',
             'description' => 'nullable',
             'type_id' => 'nullable|exists:types,id'
-
         ];
     }
 }

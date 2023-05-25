@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use App\Models\Type;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -51,7 +49,7 @@ class PostController extends Controller
         }
 
         $newPost = Post::create($validated_data); //con la create si fa la fill e la save con un comando solo
-        return redirect()->route('admin.posts.show', ['post' => $newPost->slug])->with('status', 'Progetto creato correttamente!');
+        return redirect()->route('admin.posts.show', ['post' => $newPost->slug]);
     }
 
     /**

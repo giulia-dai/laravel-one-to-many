@@ -5,9 +5,9 @@
 @section('content')
 
     <h1>{{ $post->title }}</h1>
-    <h6>Slug:{{ $post->slug }}</h6>
+    <h6>Slug: {{ $post->slug }}</h6>
 
-    <h6>Type:{{ $post->type ? $post->type->name : 'Nessuna categoria selezionata' }}</h6>
+    <h6>Type: {{ $post->type ? $post->type->name : 'Nessuna categoria selezionata' }}</h6>
 
     @if ($post->cover_img)
         <img class="img-thumbnail" src="{{ $post->cover_img }}" alt="{{ $post->title }}">
